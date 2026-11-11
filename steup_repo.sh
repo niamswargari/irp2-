@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Initialize repository with 'main' as the default branch
 git init -b main
 
-# --- Day 1 Commits ---
 export GIT_AUTHOR_DATE="2026-03-01T10:00:00"
 export GIT_COMMITTER_DATE="2026-03-01T10:00:00"
 
@@ -15,12 +13,10 @@ echo "__pycache__/" > .gitignore
 git add .gitignore
 git commit -m "chore: add .gitignore file"
 
-# --- Switch to 'dev' branch ---
 git checkout -b dev
 
 mkdir -p problems tests
 
-# --- Day 2 Commits ---
 export GIT_AUTHOR_DATE="2026-03-02T11:00:00"
 export GIT_COMMITTER_DATE="2026-03-02T11:00:00"
 
@@ -79,7 +75,6 @@ EOF
 git add problems/p2_binary_search.py
 git commit -m "feat(p2): add iterative binary search solution"
 
-# --- Day 3 Commits ---
 export GIT_AUTHOR_DATE="2026-03-03T14:00:00"
 export GIT_COMMITTER_DATE="2026-03-03T14:00:00"
 
@@ -153,8 +148,8 @@ EOF
 git add tests/p4_input.txt tests/p4_output.txt
 git commit -m "test(p4): add pair count test data"
 
-# --- Merge dev into main ---
 git checkout main
 git merge dev -m "merge: merge dev branch into main with complete implementation"
 
 echo "Repository setup complete!"
+
